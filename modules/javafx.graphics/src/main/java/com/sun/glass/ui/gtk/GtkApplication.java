@@ -243,7 +243,6 @@ final class GtkApplication extends Application implements
     private int getWindowScale() {
         String type = AccessController.doPrivileged((PrivilegedAction<String>) () -> System.getProperty("com.sun.javafx.application.type", ""));
         if ("FXCanvas".equals(type)) {
-            PlatformLogger logger = Logging.getJavaFXLogger();
             final int scale = AccessController.doPrivileged((PrivilegedAction<Integer>) () -> Integer.getInteger("org.eclipse.swt.internal.deviceZoom", 100));
             return scale / 100;
         }
